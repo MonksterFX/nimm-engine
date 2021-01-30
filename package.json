@@ -1,15 +1,21 @@
 {
   "name": "@MonksterFX/nimm-engine",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "game engine for nimm",
-  "main": "index.ts",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.ts",
   "scripts": {
     "dev": "ts-node index.ts",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": "git@github.com:MonksterFX/nimm-engine.git",
   "author": "Max Moench",
   "license": "MIT",
   "dependencies": {
     "@types/node": "^14.14.22"
-  }
+  },
+  "files": [
+    "dist/**/*"
+  ]
 }
