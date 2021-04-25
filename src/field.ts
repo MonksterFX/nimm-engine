@@ -65,8 +65,10 @@ export class GameField {
   takeStones(index: number, to: number, direction: Orientation) {
     const line = this.getLineOfStones(index, direction);
 
-    // guard
-    if (!this.isValidMove(to, line)) return false;
+    if (!this.isValidMove(to, line)) {
+      console.log('invalid move');
+      return false;
+    }
 
     line
       .slice(0, to + 1)
@@ -80,7 +82,8 @@ export class GameField {
   }
 
   getRow(index: number) {
-    return this.field[index];
+    // protect from change to the order of the array itself
+    return [...this.field[index]];
   }
 
   getColumn(index: number) {
