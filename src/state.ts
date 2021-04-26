@@ -7,7 +7,7 @@ export interface GameOptions {
 // main class
 export class GameState {
   readonly options: GameOptions;
-  protected gameField: GameField;
+  readonly gameField: GameField;
 
   constructor(options: GameOptions) {
     this.options = options;

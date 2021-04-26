@@ -1,9 +1,9 @@
 {
   "name": "@monksterfx/nimm-engine",
-  "version": "0.1.4",
+  "version": "0.1.7",
   "description": "game engine for nimm",
-  "types": "dist/index.d.ts",
-  "main": "dist/index.js",
+  "types": "dist/src/index.d.ts",
+  "main": "dist/src/index.js",
   "scripts": {
     "dev": "ts-node index.ts",
     "build": "tsc",
