@@ -1,4 +1,5 @@
 import { GameField, Orientation } from './field';
+import { Move } from './move';
 
 export interface GameOptions {
   size: [row: number, column: number];
@@ -14,8 +15,13 @@ export class GameState {
     this.gameField = new GameField(options);
   }
 
-  move(index: number, to: number, direction: Orientation): boolean {
-    return this.gameField.takeStones(index, to, direction);
+  moveWithFieldId(id: number, orientation: Orientation) {
+    const move = this.gameField.createMove(id, orientation);
+    return this.move(move.index, move.to, move.orientation);
+  }
+
+  move(index: number, to: number, orientation: Orientation): boolean {
+    return this.gameField.takeStones(index, to, orientation);
   }
 
   toString() {
